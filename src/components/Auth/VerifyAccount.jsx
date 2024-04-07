@@ -28,12 +28,12 @@ const VerifyAccount = () => {
   return (
     <div>
       <Navbar />
-      <div className=" bg-[#121212] text-white h-[100vh] flex flex-col justify-center items-center">
+      <div className=" bg-[#121212] text-white h-[100vh] flex flex-col justify-center items-center p-4">
         <p className="flex justify-center">
           Please verify your account by clicking the link sent to your email id.
         </p>
-        <p className="flex justify-center p-2">
-          <sub>if verified please click on the button below</sub>
+        <p className="flex justify-center  text-fuchsia-500 text-sm">
+          If verified please click on the button below
         </p>
         <button
           onClick={handleCheck}
@@ -41,7 +41,10 @@ const VerifyAccount = () => {
         >
           {loading ? <Spinner /> : "Check Verification"}
         </button>
-        <p className="hover:underline" onClick={handleSend}>
+        <p
+          className="hover:underline cursor-pointer hover:text-fuchsia-400"
+          onClick={handleSend}
+        >
           Send again
         </p>
       </div>
