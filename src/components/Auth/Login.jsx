@@ -20,7 +20,8 @@ function Login() {
   const loading = useSelector((state) => state.auth?.loading);
 
   const submit = async (data) => {
-    const isEmail = data.username.includes("@");
+    try{
+      const isEmail = data.username.includes("@");
     const loginData = isEmail
       ? { email: data.username, password: data.password }
       : data;
@@ -38,6 +39,11 @@ function Login() {
           navigate("/verify");
         }
       }
+    }
+    }
+    catch(error){
+      toast.error(error.response.data.error);
+      throw error;
     }
   };
 
